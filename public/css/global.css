@@ -1,0 +1,42 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+/* For the collapsing menu on mobile view */
+.navbar-collapse {
+    transition: max-height 0.2s ease-in-out;
+    overflow: hidden;
+    max-height: 0; /* Initially collapsed */
+}
+
+.collapse:not(.show) {
+    display: none !important;
+}
+
+.navbar-collapse.show {
+    max-height: 500px; /* Large enough to show the entire menu */
+}
+
+.navbar-nav .nav-link {
+    text-align: center;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: white;
+    font-weight: bold;
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
+/* Adjust the collapse animation for mobile view */
+@media (max-width: 991.98px) { /* Applies to screens smaller than lg */
+    .navbar-collapse {
+        max-height: 0;
+        transition: max-height 0.2s ease-in-out;
+    }
+
+    .navbar-collapse.show {
+        max-height: 500px;
+        transition: max-height 0.2s ease-in-out;
+    }
+}

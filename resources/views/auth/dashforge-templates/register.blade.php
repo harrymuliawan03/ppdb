@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -30,9 +31,9 @@
     <meta name="author" content="Redtech">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}"> --}}
 
-    <title>Webcore - Web Backend Generate</title>
+    <title>SMK - Multimedia Mandiri</title>
 
     <!-- vendor css -->
     <link href="{{ asset('vendor/dashforge/lib/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -43,32 +44,36 @@
     <link rel="stylesheet" href="{{ asset('vendor/dashforge/assets/css/dashforge.auth.css') }}">
 
     <style>
-      .df-settings {
-        display: none;
-      }
-      .btn-outline-google {
-        background-color: transparent;
-        border-color: #dd4b39;
-        color: #dd4b39;
-      }
-      .btn-outline-google:hover, .btn-outline-google:focus {
-        background-color: #dd4b39;
-        border-color: #dd4b39;
-        color: #fff;
-      }
+        .df-settings {
+            display: none;
+        }
+
+        .btn-outline-google {
+            background-color: transparent;
+            border-color: #dd4b39;
+            color: #dd4b39;
+        }
+
+        .btn-outline-google:hover,
+        .btn-outline-google:focus {
+            background-color: #dd4b39;
+            border-color: #dd4b39;
+            color: #fff;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <header class="navbar navbar-header navbar-header-fixed">
-      <a href="" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
-      <div class="navbar-brand">
-        <a href=" {{ url('/') }} " class="df-logo">
-          <!-- web<span>core</span> -->        
-          <img src="{{ asset('webcore-logo.png') }}" alt="Webcore" width="120">
-        </a>
-      </div><!-- navbar-brand -->
-      {{--<div id="navbarMenu" class="navbar-menu-wrapper">
+        {{-- <a href="" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a> --}}
+        <div class="navbar-brand">
+            <a href=" {{ url('/') }} " class="df-logo">
+                <!-- web<span>core</span> -->
+                <h1>SMK M3</h1>
+            </a>
+        </div><!-- navbar-brand -->
+        {{-- <div id="navbarMenu" class="navbar-menu-wrapper">
         <div class="navbar-menu-header">
           <a href="../../index.html" class="df-logo">dash<span>forge</span></a>
           <a id="mainMenuClose" href=""><i data-feather="x"></i></a>
@@ -128,100 +133,131 @@
           <li class="nav-item"><a href="../../components/" class="nav-link"><i data-feather="box"></i> Components</a></li>
           <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i> Collections</a></li>
         </ul>
-      </div><!-- navbar-menu-wrapper -->--}}
-      {{--<div class="navbar-right">
+      </div><!-- navbar-menu-wrapper --> --}}
+        {{-- <div class="navbar-right">
         <a href="http://dribbble.com/themepixels" class="btn btn-social"><i class="fab fa-dribbble"></i></a>
         <a href="https://github.com/themepixels" class="btn btn-social"><i class="fab fa-github"></i></a>
         <a href="https://twitter.com/themepixels" class="btn btn-social"><i class="fab fa-twitter"></i></a>
         <a href="https://themeforest.net/item/azia-responsive-bootstrap-4-dashboard-template/22983790" class="btn btn-buy"><i data-feather="shopping-bag"></i> <span>Buy Now</span></a>
-      </div><!-- navbar-right -->--}}
+      </div><!-- navbar-right --> --}}
     </header><!-- navbar -->
 
-    <div class="content content-fixed content-auth">
-      <div class="container">
-        <div class="media align-items-stretch justify-content-center ht-100p">
-          <form class="sign-wrapper mg-lg-r-50 mg-xl-r-60" method="post" action="{{ url('/register') }}">
-            {!! csrf_field() !!}
-          <!-- <div class="sign-wrapper mg-lg-r-50 mg-xl-r-60"> -->
-            <div class="pd-t-20 wd-100p">
-              <h4 class="tx-color-01 mg-b-5">Create New Account</h4>
-              <p class="tx-color-03 tx-16 mg-b-40">It's free to signup and only takes a minute.</p>
+    <div class="content content-fixed content-auth" style="background-color: #F7F7F7">
+        <div class="container">
+            <div class="media align-items-center justify-content-center ht-100p">
+                <form class="mg-lg-r-50 mg-xl-r-60" method="post" action="{{ url('/register-student') }}">
+                    {!! csrf_field() !!}
+                    <!-- <div class="sign-wrapper mg-lg-r-50 mg-xl-r-60"> -->
+                    <div class="pd-t-20 wd-100p">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <img src="{{ asset('images/animation-1.jpeg') }}" alt=""
+                                style="width: 250px; height:250px;">
+                            <h4 class="tx-color-01 font-weight-bold mg-b-0 mb-5 w-100">Daftar akun calon siswa</h4>
+                        </div>
+                        {{-- <p class="tx-color-03 tx-16 mg-b-40">It's free to signup and only takes a minute.</p> --}}
+                        <div class="form-group">
+                            <label>Nama Lengkap</label>
+                            <input type="name" name="name" class="form-control">
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" name="email" class="form-control">
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>NISN</label>
+                            <input type="number" name="nisn" class="form-control">
+                            @error('nisn')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal Lahir</label>
+                            <input type="date" name="birth_date" class="form-control">
+                            @error('birth_date')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>No. HP</label>
+                            <input type="number" name="phone_number" class="form-control">
+                            @error('phone_number')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="gender">Jenis Kelamin</label>
+                            <select name="gender" id="gender">
+                                <option value="">Pilih Gender</option>
+                                <option value="male">Laki-laki</option>
+                                <option value="female">Perempuan</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                            @error('gender')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between mg-b-5">
+                                <label class="mg-b-0-f">Alamat lengkap</label>
+                            </div>
+                            <textarea name="address" class="form-control"></textarea>
+                            @error('address')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between mg-b-5">
+                                <label class="mg-b-0-f">Password</label>
+                            </div>
+                            <input type="password" name="password" class="form-control">
+                            @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
 
-              <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter your Username">
-              </div>
-              <div class="form-group">
-                <label>Email address</label>
-                <input type="email" name="email" class="form-control" placeholder="Enter your email address">
-              </div>
-              <div class="form-group">
-                <div class="d-flex justify-content-between mg-b-5">
-                  <label class="mg-b-0-f">Password</label>
-                </div>
-                <input type="password" name="password" class="form-control" placeholder="Enter your password">
-              </div>
-              <div class="form-group">
-                <div class="d-flex justify-content-between mg-b-5">
-                  <label class="mg-b-0-f">Password Confirmation</label>
-                </div>
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Enter your password confirmation">
-              </div>
-              {{--<div class="form-group">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between mg-b-5">
+                                <label class="mg-b-0-f">Konfirmasi Kata Sandi</label>
+                            </div>
+                            <input type="password" name="password_confirmation" class="form-control">
+                            @error('password_confirmation')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        {{-- <div class="form-group">
                 <label>Firstname</label>
                 <input type="text" class="form-control" placeholder="Enter your firstname">
               </div>
               <div class="form-group">
                 <label>Lastname</label>
                 <input type="text" class="form-control" placeholder="Enter your lastname">
-              </div>--}}
-              <div class="form-group tx-12">
-                By clicking <strong>Create an account</strong> below, you agree to our terms of service and privacy statement.
-              </div><!-- form-group -->
+              </div> --}}
+                        <div class="form-group tx-12">
+                            Dengan mengklik <strong>Buat akun</strong> di bawah, Anda menyetujui syarat dan ketentuan
+                            serta
+                            kebijakan privasi kami.
+                        </div>
 
-              <button class="btn btn-brand-02 btn-block">Create Account</button>
-              <div class="divider-text">or</div>
-              <button class="btn btn-outline-google btn-block">Sign Up With Google</button>
-              <button class="btn btn-outline-facebook btn-block">Sign Up With Facebook</button>
-              <button class="btn btn-outline-twitter btn-block">Sign Up With Twitter</button>
-              <div class="tx-13 mg-t-20 tx-center">Already have an account? <a href="{{ url('/login') }}">Sign In</a></div>
-            </div>
-          <!-- </div> -->
-          </form><!-- sign-wrapper -->
-          <div class="media-body pd-y-30 pd-lg-x-50 pd-xl-x-60 align-items-center d-none d-lg-flex pos-relative bg-dark">
-            <!-- <div class="mx-lg-wd-500 mx-xl-wd-550">
-              <img src="https://via.placeholder.com/1280x1225" class="img-fluid" alt="">
-            </div>
-            <div class="pos-absolute b-0 r-0 tx-12">
-              Social media marketing vector is created by <a href="https://www.freepik.com/pikisuperstar" target="_blank">pikisuperstar (freepik.com)</a>
-            </div> -->
-            <div class="wd-250 wd-xl-450 mg-y-30 pd-x-30">
-              <div class="signin-logo tx-28 tx-bold tx-white"><span class="tx-normal">[</span> Webcore <span class="tx-info">2020</span> <span class="tx-normal">]</span></div>
-              <div class="tx-white mg-b-60">Integrated Web Backend Generator</div>
+                        <div class="form-group tx-12">
+                            Sudah punya akun ?
+                            <a href="/login-student">Login disini</a>
+                        </div>
 
-              <h5 class="tx-white">Why Webcore 2020?</h5>
-              <p class="tx-white-6">Support templeting, swagger api documentation and file manager.</p>
-              <p class="tx-white-6 mg-b-60">Generate all CRUD logic and UI (datagrid) with additional related dropdown or form. Ready to be build as per your need of web backend project.</p>
-              <a href="https://dandisy.github.io" class="btn btn-outline-light bd bd-white bd-2 tx-white pd-x-25 tx-uppercase tx-12 tx-spacing-2 tx-medium">Get In Touch</a>
-            </div>
-          </div><!-- media-body -->
-        </div><!-- media -->
-      </div><!-- container -->
+
+                        <button class="btn btn-brand-02 btn-block">Buat Akun</button>
+                    </div>
+                    <!-- </div> -->
+                </form><!-- sign-wrapper -->
+            </div><!-- media -->
+        </div><!-- container -->
     </div><!-- content -->
 
-    <footer class="footer">
-      <div>
-        <span>&copy; 2019 Webcore v1.0.0. </span>
-        <span>Created by <a href="javascript:void(0)">Redtech</a></span>
-      </div>
-      <div>
-        <nav class="nav">
-          <a href="javascript:void(0)" class="nav-link">Licenses</a>
-          <a href="javascript:void(0)" class="nav-link">Change Log</a>
-          <a href="javascript:void(0)" class="nav-link">Get Help</a>
-        </nav>
-      </div>
-    </footer>
 
     <script src="{{ asset('vendor/dashforge/lib/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/dashforge/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -233,5 +269,6 @@
     <!-- append theme customizer -->
     <script src="{{ asset('vendor/dashforge/lib/js-cookie/js.cookie.js') }}"></script>
     <!-- <script src="{{ asset('vendor/dashforge/assets/js/dashforge.settings.js') }}"></script> -->
-  </body>
+</body>
+
 </html>

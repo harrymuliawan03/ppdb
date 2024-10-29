@@ -1,0 +1,495 @@
+/* HOME */
+#home {
+    /* padding: 0 100px; */
+    max-width: 100%;
+    /* overflow: hidden; */
+}
+/* END HOME */
+
+/* BANNER */
+#banner {
+    padding: 50px 100px;
+    width: 100%;
+}
+
+#banner .introduce {
+    display: flex;
+    flex-direction: column;
+}
+
+#banner .introduce h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#banner .introduce h1>span {
+    color: #362FD9;
+}
+
+#banner .introduce p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #747474;
+}
+
+#banner .container-hero-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#banner .container-hero-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 450px;
+}
+
+#banner .container-hero-image .hero-quote-primary {
+    position: absolute;
+    display: flex;
+    /* text-align: justify; */
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 11px;
+    bottom: 70px;
+    left: -10px;
+    width: 200px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.5);
+}
+
+#banner .container-hero-image .hero-quote-secondary {
+    position: absolute;
+    top: 40px;
+    right: -30px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.5);
+}
+/* END BANNER */
+
+/* WHY CHOOSE OUR SCHOOL */
+#why-choose-our-school {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+#why-choose-our-school .title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+#why-choose-our-school .title h1>span {
+    color: #362FD9;
+}
+
+#why-choose-our-school .title p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #747474;
+    text-align: center;
+}
+
+#why-choose-our-school .container-facilities{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    width: 100%;
+    gap: 20px; /* Add space between cards */
+    justify-items: center; /* Align items in the center */
+}
+
+#why-choose-our-school .card-facility {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust to fill grid cell */
+    max-width: 220px; /* Keep max width for larger screens */
+    height: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#why-choose-our-school .card-facility:hover {
+    transform: scale(1.1);
+}
+
+#why-choose-our-school .card-facility img {
+    width: 60px;
+    height: 60px;
+}
+
+#why-choose-our-school .card-facility h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#why-choose-our-school .card-facility p {
+    font-size: .875rem;
+    font-weight: 400;
+    color: #747474;
+    text-align: center;
+}
+
+/* END WHY CHOOSE OUR SCHOOL */
+
+/* MAJOR */
+#major {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+#major .title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+#major .title h1>span {
+    color: #362FD9;
+}
+
+#major .title p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #747474;
+    text-align: center;
+}
+
+#major .container-major-list{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    width: 100%;
+    gap: 20px; /* Add space between cards */
+    justify-items: center; /* Align items in the center */
+}
+
+#major .card-major {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #362FD9;
+    gap: 10px;
+    width: 100%; /* Adjust to fill grid cell */
+    max-width: 220px; /* Keep max width for larger screens */
+    height: 190px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#major .card-major:hover {
+    transform: scale(1.1);
+}
+
+#major .card-major img {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#major .card-major h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+#major .card-major p {
+    font-size: .875rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/* END MAJOR */
+
+/* EXTRACURRICULAR */
+#extracurricular {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0EFFF;
+    padding: 45px 100px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+#extracurricular .title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+#extracurricular .title h1>span {
+    color: #362FD9;
+}
+
+#extracurricular .title p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #747474;
+    text-align: center;
+}
+
+#extracurricular .container-extracurricular-list{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    width: 100%;
+    gap: 20px; /* Add space between cards */
+    justify-items: center; /* Align items in the center */
+}
+
+#extracurricular .card-extracurricular {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: white;
+    gap: 10px;
+    width: 100%; /* Adjust to fill grid cell */
+    max-width: 220px; /* Keep max width for larger screens */
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#extracurricular .card-extracurricular:hover {
+    transform: scale(1.1);
+}
+
+#extracurricular .card-extracurricular h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#extracurricular .card-extracurricular p {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #747474;
+    margin: 0;
+}
+
+/* END EXTRACURRICULAR */
+
+/* NEWS */
+#news {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 45px 100px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+#news .title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+#news .title h1>span {
+    color: #362FD9;
+}
+
+#news .title p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #747474;
+    text-align: center;
+}
+
+#news .container-news-list{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    width: 100%;
+    gap: 50px; /* Add space between cards */
+    justify-items: center; /* Align items in the center */
+}
+
+#news .card-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: white;
+    gap: 10px;
+    width: 100%; /* Adjust to fill grid cell */
+    max-width: 220px; /* Keep max width for larger screens */
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#news .card-news:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 15px 0 rgba(54, 47, 217, 0.6); /* Blue shadow with 20% opacity */
+}
+
+#news .card-news img {
+    width: 100%;
+    height: 150px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#news .card-news .content-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+}
+
+#news .card-news .content-desc h2 {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#news .card-news .content-desc p {
+    font-size: .0.5rem;
+    font-weight: 400;
+    color: #747474;
+    margin: 0;
+}
+
+#news .card-news .content-desc p.action {
+    font-weight: 500;
+    color: #362FD9 !important;
+}
+
+/* END NEWS */
+
+/* DOCUMENTATION-PHOTO */
+#documentation-photo {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #362FD9;
+    padding: 45px 100px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+#documentation-photo .title h1 {
+    font-size: 2.375rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#documentation-photo .title p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #747474;
+    text-align: center;
+}
+
+#documentation-photo .container-documentation-photo-list{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    width: 100%;
+    gap: 20px; /* Add space between cards */
+    justify-items: center; /* Align items in the center */
+}
+
+#documentation-photo .card-documentation-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    background-color: white;
+    gap: 10px;
+    width: 100%; /* Adjust to fill grid cell */
+    max-width: 280px; /* Keep max width for larger screens */
+    height: 340px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#documentation-photo .card-documentation-photo:hover {
+    transform: scale(1.1);
+}
+
+#documentation-photo .card-documentation-photo .content-desc {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 30%;
+    padding: 20px;
+}
+
+#documentation-photo .card-documentation-photo .content-desc h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#documentation-photo .card-documentation-photo .content-desc p {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #202020;
+    margin: 0;
+}
+
+/* END DOCUMENTATION-PHOTO */

@@ -8,6 +8,17 @@ use Yajra\DataTables\EloquentDataTable;
 
 class UserDataTable extends DataTable
 {
+    private $isTeacher = false;
+    private $isStaffTU = false;
+
+
+    public function setIsTeacher(bool $isTeacher) {
+        $this->isTeacher = $isTeacher;
+    }
+
+    public function setIsStaffTU(bool $isStaffTU) {
+        $this->isStaffTU = $isStaffTU;
+    }
     /**
      * Build DataTable class.
      *
@@ -18,7 +29,7 @@ class UserDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'users.datatables_actions');
+        return $dataTable->addColumn('action', $this->isTeacher ? 'teachers.datatables_actions' : ($this->isStaffTU ? 'staff_tus.datatables_actions' : 'users.datatables_actions'));
     }
 
     /**
@@ -29,7 +40,18 @@ class UserDataTable extends DataTable
      */
     public function query(User $model)
     {
-        return $model->newQuery();
+        $query = $model->newQuery();
+
+        if ($this->isTeacher) {
+            $query->whereHas('roles', function ($q) {
+                $q->where('name', 'teacher');
+            });
+        }else if($this->isStaffTU){
+            $query->whereHas('roles', function ($q) {
+                $q->where('name', 'staff_tu');
+            });
+        }
+        return $query;
     }
 
     /**
@@ -74,7 +96,9 @@ class UserDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'id' => ['name' => 'id', 'title' => 'ID', 'visible' => false],
             'name',
+            'nip',
             'email',
         ];
     }

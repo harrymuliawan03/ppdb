@@ -27,7 +27,7 @@ class UserController extends AppBaseController
 
     public function __construct(UserRepository $userRepo)
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->userRepository = $userRepo;
     }
 
@@ -154,17 +154,27 @@ class UserController extends AppBaseController
 
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('users.index'));
         }
 
+        // Sync roles if provided
         if ($request->roles <> '') {
             $user->syncRoles($request->roles);
-        }
-        else {
+        } else {
             $user->roles()->detach();
         }
-        $user = $this->userRepository->update($request->all(), $id);
+
+        // Prepare data for update
+        $data = $request->all();
+
+        // Check if password is present and not empty
+        if (empty($data['password'])) {
+            unset($data['password']); // Remove password from the data array if it's empty
+        }
+
+        // Update user data
+        $user = $this->userRepository->update($data, $id);
+
         Flash::success('User updated successfully.');
         return redirect(route('users.index'));
     }

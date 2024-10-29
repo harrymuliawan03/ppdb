@@ -1,0 +1,33 @@
+.button-contact {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: blue;
+}
+
+.button-contact a {
+    color: white;
+    font: bold;
+}
+
+.wrapper-content {
+    min-height: 100vh;
+    /* background-color: aqua; */
+    /* padding: 0 20px; */
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.username-ellipsis {
+    border-radius: 10px; 
+    background-color: #362FD9; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 12px;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

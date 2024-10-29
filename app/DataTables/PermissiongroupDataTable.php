@@ -48,7 +48,6 @@ class PermissiongroupDataTable extends DataTable
                 'order'   => [[0, 'desc']],
                 'buttons' => [
                     'export',
-                    'reset',
                     'reload',
                 ],
                 'initComplete' => "function() {
