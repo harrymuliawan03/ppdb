@@ -7,11 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     {{-- <link rel="manifest" href="site.webmanifest"> --}}
 
     <title>SMk - M3</title>
@@ -114,7 +109,7 @@
     <footer class="footer">
         <div>
             <span>&copy; {{ date('Y') }} Webcore v1.1.0. </span>
-            <span>Created by <a href="https://redtech.co.id">Redtech</a></span>
+            <span>Created by <a href="https://ppdb.co.id">ppdb</a></span>
         </div>
         <div>
             <nav class="nav">

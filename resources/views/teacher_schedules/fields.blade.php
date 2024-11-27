@@ -1,53 +1,59 @@
-<!-- Student Field -->
-
+<!-- Teacher Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('school_classes', 'Kelas:') !!}
-    {!! Form::select('school_classes', ['' => 'Select Class'] + $classes->toArray(), null, [
+    {!! Form::label('teacher_id', 'Teacher:') !!}
+    {!! Form::select('teacher_id', $teacher, null, [
         'class' => 'form-control',
-        'id' => 'school_classes',
+        'id' => 'teacher_id',
     ]) !!}
 </div>
 
+<!-- Day Of Week Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('student_id', 'Murid:') !!}
-    {!! Form::select('student_id', ['' => 'Select student'] + $students, null, [
-        'class' => 'form-control',
-        'id' => 'student_id',
-        'disabled',
-    ]) !!}
+    {!! Form::label('day_of_week', 'Hari:', ['class' => 'd-block']) !!}
+    {!! Form::select(
+        'day_of_week',
+        [
+            'Senin' => 'Senin',
+            'Selasa' => 'Selasa',
+            'Rabu' => 'Rabu',
+            'Kamis' => 'Kamis',
+            'Jumat' => 'Jumat',
+            'Sabtu' => 'Sabtu',
+            'Minggu' => 'Minggu',
+        ],
+        null,
+        ['class' => 'form-control'],
+    ) !!}
 </div>
 
-<!-- Subjects Field -->
+<!-- Start Time Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('start_time', 'Jam Mulai: (contoh: 08:00)', ['class' => 'd-block']) !!}
+    {!! Form::text('start_time', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- End Time Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('end_time', 'Jam Berakhir: (contoh: 08:00)', ['class' => 'd-block']) !!}
+    {!! Form::text('end_time', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Subject Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('subject_id', 'Mata Pelajaran:') !!}
-    {!! Form::select('subject_id', $subjects, null, ['class' => 'form-control']) !!}
+    {!! Form::select('subject_id', $subject, null, [
+        'class' => 'form-control',
+        'id' => 'subject_id',
+    ]) !!}
 </div>
 
-<!-- Teacher Field -->
+<!-- Class Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('teacher_id', 'Guru:') !!}
-    @php
-        // Check if the logged-in user is a teacher
-        $isTeacher = Auth::user()->hasRole('teacher');
-    @endphp
-
-    {!! Form::select('teacher_id', $teachers, null, ['class' => 'form-control', $isTeacher ? 'readonly' : '']) !!}
-</div>
-
-<!-- Nilai Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('nilai', 'Nilai (0 - 100) :') !!}
-    {!! Form::number('nilai', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6">
-    {!! Form::label('semester', 'Semester:') !!}
-    {!! Form::number('semester', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6">
-    {!! Form::label('school_year', 'Tahun Ajaran:') !!}
-    {!! Form::number('school_year', null, ['class' => 'form-control']) !!}
+    {!! Form::label('class_id', 'Kelas:') !!}
+    {!! Form::select('class_id', $schoolClass, null, [
+        'class' => 'form-control',
+        'id' => 'class_id',
+    ]) !!}
 </div>
 
 <div class="clearfix"></div>
@@ -56,50 +62,13 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('studentGrades.index') !!}" class="btn btn-light">Cancel</a>
+    <a href="{!! route('teacherSchedules.index') !!}" class="btn btn-light">Cancel</a>
 </div>
 
 @section('scripts')
     <!-- Relational Form table -->
     <script>
         $(document).ready(function() {
-            $('#school_classes').on('change', function() {
-                var classId = $(this).val(); // Get selected class ID
-
-                if (classId) {
-                    $.ajax({
-                        url: '/get-students/' + classId,
-                        type: 'GET',
-                        dataType: 'json',
-                        success: function(data) {
-                            $('#student_id').empty(); // Clear the student dropdown
-                            // $('#student_id').append(
-                            //     '<option value="">Select Student</option>'
-                            // ); // Add default option
-                            if (data.length > 0) {
-                                $('#student_id').removeAttr('disabled');
-                            } else {
-                                $('#student_id').attr('disabled', 'disabled');
-                            }
-                            $.each(data, function(index, item) {
-                                $('#student_id').append('<option value="' + item.id +
-                                    '">' +
-                                    item.full_name + '</option>');
-                            });
-                        },
-                        error: function() {
-                            $('#student_id').empty();
-                            $('#student_id').attr('disabled', 'disabled');
-                        }
-                    });
-                } else {
-                    $('#student_id').empty();
-                    $('#student_id').append(
-                        '<option value="">Select Student</option>'
-                    );
-                    $('#student_id').attr('disabled', 'disabled');
-                }
-            });
             $('.dropify').dropify({
                 messages: {
                     default: 'Drag and drop file here or click',

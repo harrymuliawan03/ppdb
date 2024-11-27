@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Twitter -->
-    <meta name="twitter:site" content="@redtech">
-    <meta name="twitter:creator" content="@redtech">
+    <meta name="twitter:site" content="@ppdb">
+    <meta name="twitter:creator" content="@ppdb">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Webcore">
     <meta name="twitter:description" content="Responsive Bootstrap 4 Dashboard Template">
@@ -18,7 +18,7 @@
     <!-- Facebook -->
     <meta property="og:url" content="https://dandisy.github.io">
     <meta property="og:title" content="Webcore">
-    <meta property="og:description" content="Webcore - Web Backend Generate">
+    <meta property="og:description" content="PPDB - SMK M3">
 
     <meta property="og:image" content="https://via.placeholder.com/1260x950?text=Webcore">
     <meta property="og:image:secure_url" content="https://via.placeholder.com/1260x950?text=Webcore">
@@ -27,8 +27,8 @@
     <meta property="og:image:height" content="600">
 
     <!-- Meta -->
-    <meta name="description" content="Webcore - Web Backend Generate">
-    <meta name="author" content="Redtech">
+    <meta name="description" content="PPDB - SMK M3">
+    <meta name="author" content="ppdb">
 
     <!-- Favicon -->
     {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}"> --}}

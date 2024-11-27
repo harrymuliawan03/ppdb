@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('website/css/layout.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images/logo-smk.png') }}" type="image/x-icon">
 
     <title>SMK - Multimedia Mandiri</title>
 

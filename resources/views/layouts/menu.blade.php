@@ -97,10 +97,19 @@
     </li>
 @endcan
 
-<li class="nav-label mg-t-25">SPP Management</li>
+@can('teacherSchedule-show')
+    <li class="{{ Request::is('teacherSchedules*') ? 'active' : '' }} nav-item">
+        <a class="nav-link" href="{!! route('teacherSchedules.index') !!}"><i class="fa-solid fa-calendar"
+                style="width: 32px"></i><span>Teacher Schedules</span></a>
+    </li>
+@endcan
+
 
 
 @can('sppPayment-show')
+    <li class="nav-label mg-t-25">SPP Management</li>
+
+
     <li class="{{ Request::is('sppPayments*') ? 'active' : '' }} nav-item">
         <a class="nav-link" href="{!! route('sppPayments.index') !!}"><i class="fa-solid fa-money-bill-wave"
                 style="width: 32px"></i><span>Pembayaran Spp</span></a>

@@ -124,7 +124,7 @@ class StudentGradeController extends AppBaseController
     public function edit($id)
     {
         $user = Auth::user();
-        $students = \App\Models\Student::select(\DB::raw("CONCAT(nisn, ' - ', name) as full_name"), 'id')->pluck('full_name', 'id');;
+        $students = \App\Models\Student::select(\DB::raw("CONCAT(nisn, ' - ', name) as full_name"), 'id')->pluck('full_name', 'id');
         $subjects = \App\Models\Subject::all()->pluck('name', 'id');;
         $classes = \App\Models\SchoolClass::all()->pluck('nama_kelas', 'id');;
          // Initialize the teachers variable
@@ -226,8 +226,7 @@ class StudentGradeController extends AppBaseController
     public function getStudentsByClass($classId)
     {
         // Fetch students based on the classId
-        $students = \App\Models\Student::where('school_class_id', $classId)->select(\DB::raw("CONCAT(nisn, ' - ', name) as full_name"), 'id')
-        ->pluck('full_name', 'id');;
+        $students = \App\Models\Student::where('school_class_id', $classId)->select(\DB::raw("CONCAT(nisn, ' - ', name) as full_name"), 'id')->get()->toArray();
         
         // Return the students in JSON format
         return response()->json($students);

@@ -102,3 +102,7 @@ Route::middleware(['admin'])->group(function() {
     // Route::post('importStudentGrade', 'StudentGradeController@import');
 });
 
+
+
+Route::resource('teacherSchedules', 'TeacherScheduleController');
+// Route::post('importTeacherSchedule', 'TeacherScheduleController@import');

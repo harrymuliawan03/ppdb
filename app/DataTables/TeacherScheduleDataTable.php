@@ -2,12 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\StudentGrade;
-use Illuminate\Support\Facades\Auth;
+use App\Models\TeacherSchedule;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class StudentGradeDataTable extends DataTable
+class TeacherScheduleDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,7 +18,7 @@ class StudentGradeDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'student_grades.datatables_actions');
+        return $dataTable->addColumn('action', 'teacher_schedules.datatables_actions');
     }
 
     /**
@@ -28,14 +27,9 @@ class StudentGradeDataTable extends DataTable
      * @param \App\Models\Post $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(StudentGrade $model)
+    public function query(TeacherSchedule $model)
     {
-        $user = Auth::user();
-        $query = $model->newQuery()->with('student.school_class')->with('subject')->with('teacher');
-        if ($user->hasRole('teacher')) {
-            $query->where('teacher_id', $user->id);
-        }
-        return $query;
+        return $model->newQuery()->with('school_class')->with('subject')->with('teacher');
     }
 
     /**
@@ -54,6 +48,7 @@ class StudentGradeDataTable extends DataTable
                 'order'   => [[0, 'desc']],
                 'buttons' => [
                     'export',
+                    'reset',
                     'reload',
                 ],
                 'initComplete' => "function() {
@@ -80,16 +75,13 @@ class StudentGradeDataTable extends DataTable
     {
         return [
             'id' => ['name' => 'id', 'title' => 'ID', 'visible' => false],
-            'student.nisn' => ['name' => 'student.nisn', 'title' => 'NISN Siswa', 'data' => 'student.nisn'],
-            'student.name' => ['name' => 'student.name', 'title' => 'Nama Siswa', 'data' => 'student.name'],
-            'student.school_class.nama_kelas' => ['name' => 'student.school_class.nama_kelas', 'title' => 'Kelas', 'data' => 'student.school_class.nama_kelas'],
-            'subject.code' => ['name' => 'subject.code', 'title' => 'Kode Mata Pelajaran', 'data' => 'subject.code'],
-            'subject.name' => ['name' => 'subject.name', 'title' => 'Mata Pelajaran', 'data' => 'subject.name'],
-            'teacher.nip' => ['name' => 'teacher.nip', 'title' => 'NIP Guru', 'data' => 'teacher.nip'],
-            'teacher.name' => ['name' => 'teacher.name', 'title' => 'Guru', 'data' => 'teacher.name'],
-            'nilai',
-            'semester',
-            'school_year'
+            'teacher.name' => ['name' => 'teacher.name', 'title' => "Nama Guru", 'data' => 'teacher.name'],
+            'teacher.nip' => ['nip' => 'teacher.nip', 'title' => "NIP", 'data' => 'teacher.nip'],
+            'Hari' => ['name' => 'day_of_week', 'title' => "Hari", 'data' => 'day_of_week'],
+            'Jam Mulai' => ['name' => 'start_time', 'title' => "Jam Mulai", 'data' => 'start_time'],
+            'Jam Berakhir' => ['name' => 'end_time', 'title' => "Jam Berakhir", 'data' => 'end_time'],
+            'subject.name' => ['name' => 'subject.name', 'title' => "Mata Pelajaran", 'data' => 'subject.name'],
+            'school_class.nama_kelas' => ['name' => 'school_class.nama_kelas', 'title' => "Kelas", 'data' => 'school_class.nama_kelas'],
         ];
     }
 
@@ -100,6 +92,6 @@ class StudentGradeDataTable extends DataTable
      */
     protected function filename():string
     {
-        return 'student_gradesdatatable_' . time();
+        return 'teacher_schedulesdatatable_' . time();
     }
 }

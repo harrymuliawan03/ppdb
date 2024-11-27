@@ -1,8 +1,8 @@
 <aside class="aside aside-fixed">
     <div class="aside-header">
         <a href="{{ url('/') }}">
-            {{-- <img src="{{ asset('webcore-logo.png') }}" alt="logo" width="120"> --}}
-            <h1>SMK M3</h1>
+            <img src="{{ asset('images/logo-smk.png') }}" alt="logo" width="50">
+            {{-- <h1>SMK M3</h1> --}}
         </a>
         <a href="" class="aside-menu-link">
             <i data-feather="menu"></i>

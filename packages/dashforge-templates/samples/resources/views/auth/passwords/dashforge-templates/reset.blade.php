@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Twitter -->
-    <meta name="twitter:site" content="@redtech">
-    <meta name="twitter:creator" content="@redtech">
+    <meta name="twitter:site" content="@ppdb">
+    <meta name="twitter:creator" content="@ppdb">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Webcore">
     <meta name="twitter:description" content="Responsive Bootstrap 4 Dashboard Template">
@@ -17,7 +18,7 @@
     <!-- Facebook -->
     <meta property="og:url" content="https://dandisy.github.io">
     <meta property="og:title" content="Webcore">
-    <meta property="og:description" content="Webcore - Web Backend Generate">
+    <meta property="og:description" content="PPDB - SMK M3">
 
     <meta property="og:image" content="https://via.placeholder.com/1260x950?text=Webcore">
     <meta property="og:image:secure_url" content="https://via.placeholder.com/1260x950?text=Webcore">
@@ -26,13 +27,13 @@
     <meta property="og:image:height" content="600">
 
     <!-- Meta -->
-    <meta name="description" content="Webcore - Web Backend Generate">
-    <meta name="author" content="Redtech">
+    <meta name="description" content="PPDB - SMK M3">
+    <meta name="author" content="ppdb">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo-smk.png') }}" type="image/x-icon">
 
-    <title>Webcore - Web Backend Generate</title>
+    <title>PPDB - SMK M3</title>
 
     <!-- vendor css -->
     <link href="{{ asset('vendor/dashforge/lib/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -41,18 +42,19 @@
     <!-- DashForge CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/dashforge/assets/css/dashforge.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/dashforge/assets/css/dashforge.auth.css') }}">
-  </head>
-  <body>
+</head>
+
+<body>
 
     <header class="navbar navbar-header navbar-header-fixed">
-      <a href="" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
-      <div class="navbar-brand">
-        <a href=" {{ url('/') }} " class="df-logo">
-          <!-- web<span>core</span> -->        
-          <img src="{{ asset('webcore-logo.png') }}" alt="Webcore" width="120">
-        </a>
-      </div><!-- navbar-brand -->
-      {{--<div id="navbarMenu" class="navbar-menu-wrapper">
+        <a href="" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
+        <div class="navbar-brand">
+            <a href=" {{ url('/') }} " class="df-logo">
+                <!-- web<span>core</span> -->
+                <img src="{{ asset('webcore-logo.png') }}" alt="Webcore" width="120">
+            </a>
+        </div><!-- navbar-brand -->
+        {{-- <div id="navbarMenu" class="navbar-menu-wrapper">
         <div class="navbar-menu-header">
           <a href="../../index.html" class="df-logo">dash<span>forge</span></a>
           <a id="mainMenuClose" href=""><i data-feather="x"></i></a>
@@ -112,76 +114,79 @@
           <li class="nav-item"><a href="../../components/" class="nav-link"><i data-feather="box"></i> Components</a></li>
           <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i> Collections</a></li>
         </ul>
-      </div><!-- navbar-menu-wrapper -->--}}
-      {{--<div class="navbar-right">
+      </div><!-- navbar-menu-wrapper --> --}}
+        {{-- <div class="navbar-right">
         <a href="http://dribbble.com/themepixels" class="btn btn-social"><i class="fab fa-dribbble"></i></a>
         <a href="https://github.com/themepixels" class="btn btn-social"><i class="fab fa-github"></i></a>
         <a href="https://twitter.com/themepixels" class="btn btn-social"><i class="fab fa-twitter"></i></a>
         <a href="https://themeforest.net/item/azia-responsive-bootstrap-4-dashboard-template/22983790" class="btn btn-buy"><i data-feather="shopping-bag"></i> <span>Buy Now</span></a>
-      </div><!-- navbar-right -->--}}
+      </div><!-- navbar-right --> --}}
     </header><!-- navbar -->
 
     <div class="content content-fixed content-auth">
-      <div class="container">
-        <div class="media align-items-stretch justify-content-center ht-100p">
-          <div class="sign-wrapper mg-lg-r-50 mg-xl-r-60">
-            <div class="pd-t-20 wd-100p">
-              <h4 class="tx-color-01 mg-b-5">Create New Account</h4>
-              <p class="tx-color-03 tx-16 mg-b-40">It's free to signup and only takes a minute.</p>
+        <div class="container">
+            <div class="media align-items-stretch justify-content-center ht-100p">
+                <div class="sign-wrapper mg-lg-r-50 mg-xl-r-60">
+                    <div class="pd-t-20 wd-100p">
+                        <h4 class="tx-color-01 mg-b-5">Create New Account</h4>
+                        <p class="tx-color-03 tx-16 mg-b-40">It's free to signup and only takes a minute.</p>
 
-              <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control" placeholder="Enter your email address">
-              </div>
-              <div class="form-group">
-                <div class="d-flex justify-content-between mg-b-5">
-                  <label class="mg-b-0-f">Password</label>
-                </div>
-                <input type="password" class="form-control" placeholder="Enter your password">
-              </div>
-              <div class="form-group">
-                <label>Firstname</label>
-                <input type="text" class="form-control" placeholder="Enter your firstname">
-              </div>
-              <div class="form-group">
-                <label>Lastname</label>
-                <input type="text" class="form-control" placeholder="Enter your lastname">
-              </div>
-              <div class="form-group tx-12">
-                By clicking <strong>Create an account</strong> below, you agree to our terms of service and privacy statement.
-              </div><!-- form-group -->
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between mg-b-5">
+                                <label class="mg-b-0-f">Password</label>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <label>Firstname</label>
+                            <input type="text" class="form-control" placeholder="Enter your firstname">
+                        </div>
+                        <div class="form-group">
+                            <label>Lastname</label>
+                            <input type="text" class="form-control" placeholder="Enter your lastname">
+                        </div>
+                        <div class="form-group tx-12">
+                            By clicking <strong>Create an account</strong> below, you agree to our terms of service and
+                            privacy statement.
+                        </div><!-- form-group -->
 
-              <button class="btn btn-brand-02 btn-block">Create Account</button>
-              <div class="divider-text">or</div>
-              <button class="btn btn-outline-facebook btn-block">Sign Up With Facebook</button>
-              <button class="btn btn-outline-twitter btn-block">Sign Up With Twitter</button>
-              <div class="tx-13 mg-t-20 tx-center">Already have an account? <a href="page-signin.html">Sign In</a></div>
-            </div>
-          </div><!-- sign-wrapper -->
-          <div class="media-body pd-y-30 pd-lg-x-50 pd-xl-x-60 align-items-center d-none d-lg-flex pos-relative">
-            <div class="mx-lg-wd-500 mx-xl-wd-550">
-              <img src="https://via.placeholder.com/1280x1225" class="img-fluid" alt="">
-            </div>
-            <div class="pos-absolute b-0 r-0 tx-12">
-              Social media marketing vector is created by <a href="https://www.freepik.com/pikisuperstar" target="_blank">pikisuperstar (freepik.com)</a>
-            </div>
-          </div><!-- media-body -->
-        </div><!-- media -->
-      </div><!-- container -->
+                        <button class="btn btn-brand-02 btn-block">Create Account</button>
+                        <div class="divider-text">or</div>
+                        <button class="btn btn-outline-facebook btn-block">Sign Up With Facebook</button>
+                        <button class="btn btn-outline-twitter btn-block">Sign Up With Twitter</button>
+                        <div class="tx-13 mg-t-20 tx-center">Already have an account? <a href="page-signin.html">Sign
+                                In</a></div>
+                    </div>
+                </div><!-- sign-wrapper -->
+                <div class="media-body pd-y-30 pd-lg-x-50 pd-xl-x-60 align-items-center d-none d-lg-flex pos-relative">
+                    <div class="mx-lg-wd-500 mx-xl-wd-550">
+                        <img src="https://via.placeholder.com/1280x1225" class="img-fluid" alt="">
+                    </div>
+                    <div class="pos-absolute b-0 r-0 tx-12">
+                        Social media marketing vector is created by <a href="https://www.freepik.com/pikisuperstar"
+                            target="_blank">pikisuperstar (freepik.com)</a>
+                    </div>
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- container -->
     </div><!-- content -->
 
     <footer class="footer">
-      <div>
-        <span>&copy; 2019 Webcore v1.0.0. </span>
-        <span>Created by <a href="javascript:void(0)">Redtech</a></span>
-      </div>
-      <div>
-        <nav class="nav">
-          <a href="javascript:void(0)" class="nav-link">Licenses</a>
-          <a href="javascript:void(0)" class="nav-link">Change Log</a>
-          <a href="javascript:void(0)" class="nav-link">Get Help</a>
-        </nav>
-      </div>
+        <div>
+            <span>&copy; 2019 Webcore v1.0.0. </span>
+            <span>Created by <a href="javascript:void(0)">ppdb</a></span>
+        </div>
+        <div>
+            <nav class="nav">
+                <a href="javascript:void(0)" class="nav-link">Licenses</a>
+                <a href="javascript:void(0)" class="nav-link">Change Log</a>
+                <a href="javascript:void(0)" class="nav-link">Get Help</a>
+            </nav>
+        </div>
     </footer>
 
     <script src="{{ asset('vendor/dashforge/lib/jquery/jquery.min.js') }}"></script>
@@ -194,5 +199,6 @@
     <!-- append theme customizer -->
     <script src="{{ asset('vendor/dashforge/lib/js-cookie/js.cookie.js') }}"></script>
     <script src="{{ asset('vendor/dashforge/assets/js/dashforge.settings.js') }}"></script>
-  </body>
+</body>
+
 </html>

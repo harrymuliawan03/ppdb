@@ -6,18 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     {{-- <link rel="manifest" href="site.webmanifest"> --}}
 
     <title>{{ isset($appName) ? $appName : 'Webcore' }}</title>
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fonts/Raleway.css') }}" rel="stylesheet" type="text/css">
-    {{--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">--}}
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <style>
@@ -88,14 +83,14 @@
 <body>
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-            <a href="{{ url('/home') }}">Home</a>
-            @else
-            <a href="{{ route('login') }}">Login</a>
-            {{-- <a href="{{ route('register') }}">Register</a> --}}
-            @endauth
-        </div>
+            <div class="top-right links">
+                @auth
+                    <a href="{{ url('/home') }}">Home</a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
+                    {{-- <a href="{{ route('register') }}">Register</a> --}}
+                @endauth
+            </div>
         @endif
 
         <div class="content">
